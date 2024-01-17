@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './style.css';
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function Navbar() {
@@ -38,22 +37,10 @@ function Navbar() {
                             <div className="dropdown-menu">
                                 {/* Dropdown content goes here */}
                                 <a className="dropdown-item" href="#link1">
-                                <FontAwesomeIcon icon="fa-regular fa-coffee" /> Received
+                                    Link 1
                                 </a>
                                 <a className="dropdown-item" href="#link2">
-                                    Shipped
-                                </a>
-                                <a className="dropdown-item" href="#link2">
-                                    Delievered 
-                                </a>
-                                <a className="dropdown-item" href="#link2">
-                                    On Hold
-                                </a>
-                                <a className="dropdown-item" href="#link2">
-                                    RTS
-                                </a>
-                                <a className="dropdown-item" href="#link2">
-                                    New
+                                    Link 2
                                 </a>
                             </div>
                         </li>
