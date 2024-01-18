@@ -9,9 +9,11 @@ import { faNetworkWired } from '@fortawesome/free-solid-svg-icons'
 function aboutUs () {
     return(
 
-<div class='about-us'>
-    <h1>test</h1>
-</div>
+        <><div class='about-us'>
+            <h1>test</h1>
+        </div><button>rrr
+
+            </button></>
 
 
 
