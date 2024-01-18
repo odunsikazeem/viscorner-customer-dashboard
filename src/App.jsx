@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/NavBar/index'
-import './App.css'
+import Navbar from './components/NavBar/index';
+import Landing from './components/Landing';
+import './App.css';
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fas } from '@fortawesome/free-solid-svg-icons'
 // import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
+        <Landing />
       </div>
     </Router>
   );
