@@ -1,6 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import './styles.css';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { faNetworkWired } from '@fortawesome/free-solid-svg-icons' 
 
-<div class='aboutSection'>test</div>
-<h1>test code with push</h1>
+function aboutUs () {
+    return(
+
+<div class='about-us'>
+    <h1>test</h1>
+</div>
+
+
+
+    )
+}
+   
