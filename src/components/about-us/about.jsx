@@ -6,18 +6,37 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons' 
 
-function aboutUs () {
-    return(
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Nav from 'react-bootstrap/Nav';
 
-        <><div class='about-us'>
-            <h1>test</h1>
-        </div><button>rrr
-
-            </button></>
-
-
-
-    )
+function NavTabsExample() {
+  return (
+    <Card>
+      <Card.Header>
+        <Nav variant="tabs" defaultActiveKey="#first">
+          <Nav.Item>
+            <Nav.Link href="#first">Active</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="#link">Link</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="#disabled" disabled>
+              Disabled
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Card.Header>
+      <Card.Body>
+        <Card.Title>Special title treatment</Card.Title>
+        <Card.Text>
+          With supporting text below as a natural lead-in to additional content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+  );
 }
-   
-export default aboutUs
+
+export default NavTabsExample;
