@@ -75,7 +75,7 @@ function Navbar() {
 
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"> <FontAwesomeIcon icon={faNetworkWired} /> VisCore</a>
+                <a class="navbar-brand" href="#"> <FontAwesomeIcon icon={faNetworkWired} /> VisCorner</a>
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
