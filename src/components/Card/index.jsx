@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card, ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import styled from 'styled-components';
 
 const CustomerRequests = () => {
   const [customerRequests, setCustomerRequests] = useState([]);
@@ -19,6 +20,7 @@ const CustomerRequests = () => {
   }, []);
 
   return (
+    <Wrapper>
     <div>
       <h1>Customer Requests</h1>
       <div className="row">
@@ -41,7 +43,17 @@ const CustomerRequests = () => {
         ))}
       </div>
     </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.main`
+.row {
+    background-color: #97badd;
+}
+h1 {
+  margin-top:20px;
+}
+`;
 
 export default CustomerRequests;

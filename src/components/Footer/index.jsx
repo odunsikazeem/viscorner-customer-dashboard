@@ -21,6 +21,7 @@ export default Footer;
 
 
 const FooterContainer = styled.div`
+div {
 	position: fixed;
 	display: flex;
 	justify-content: center;
