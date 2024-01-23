@@ -3,9 +3,13 @@ import axios from 'axios';
 import { Card, ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components';
+import Pagination from '../Pagination';
 
 const CustomerRequests = () => {
   const [customerRequests, setCustomerRequests] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [requestsPerPage] = useState(3); 
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,12 +23,20 @@ const CustomerRequests = () => {
     fetchData();
   }, []);
 
+     const indexOfLastRequest = currentPage * requestsPerPage;
+     const indexOfFirstRequest = indexOfLastRequest - requestsPerPage;
+     const currentRequests = customerRequests.slice(indexOfFirstRequest, indexOfLastRequest);
+   
+     // Change page
+     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
+
   return (
     <Wrapper>
     <div>
       <h1>Customer Requests</h1>
       <div className="row">
-        {customerRequests.map((customerRequest) => (
+        {currentRequests.map((customerRequest) => (
           <div className="col-md-4" key={customerRequest.id}>
             <Card style={{ width: "18rem" }}>
               <Card.Img variant="top" src={customerRequest.attachment} />
@@ -41,6 +53,13 @@ const CustomerRequests = () => {
             </Card>
           </div>
         ))}
+        <Pagination
+        requestsPerPage={requestsPerPage}
+        totalRequests={customerRequests.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
+
       </div>
     </div>
     </Wrapper>
