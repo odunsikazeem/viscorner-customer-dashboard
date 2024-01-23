@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <Landing />
         <CustomerRequests />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

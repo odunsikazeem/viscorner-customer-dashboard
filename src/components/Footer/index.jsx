@@ -32,6 +32,7 @@ const FooterContainer = styled.div`
 	color: white;
 	flex-direction: column; 
   	align-items: center; 
+	
 			
 	}
 `;
