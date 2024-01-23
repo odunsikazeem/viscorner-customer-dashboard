@@ -27,7 +27,7 @@ const CustomerRequests = () => {
      const indexOfFirstRequest = indexOfLastRequest - requestsPerPage;
      const currentRequests = customerRequests.slice(indexOfFirstRequest, indexOfLastRequest);
    
-     // Change page
+     
      const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
 
