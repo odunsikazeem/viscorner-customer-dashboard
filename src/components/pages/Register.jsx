@@ -20,12 +20,28 @@ const { user, isLoading } = useSelector (store => store.user);
 const dispatch = useDispatch();
     // redux toolkit and useNavigate later
 
+    useEffect(() => {
+        // Check if the user is already logged in using local storage
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+          // Update the Redux store with the user data
+          dispatch(loginUser(JSON.parse(storedUser)));
+        }
+      }, [dispatch]);
+
     const handleChange = (e) => {
         const name = e.target.name
         const value = e.target.value
         console.log`${name}:${value}`;
         setValues({...values,[name]:value})
     };
+
+    const authenticateUser = (userData) => {
+        // Save user data to local storage
+        localStorage.setItem('user', JSON.stringify(userData));
+        // Dispatch the action to update the Redux store
+        dispatch(loginUser(userData));
+      };
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -37,9 +53,10 @@ const dispatch = useDispatch();
         if(isMember) {
         dispatch(loginUser({email:email, password:password}))
         return;
-    }
+    } else {
     dispatch(registerUser({name, email, password}));
-    };
+    authenticateUser({ name, email });
+}};
 
     const toggleMember = () => {
         setValues({...values, isMember: !values.isMember});
@@ -64,7 +81,7 @@ const dispatch = useDispatch();
                 {/* password field */}
                 <FormRow type="password" name="password" value={values.password} handleChange={handleChange} />
 
-                <button type='submit' className='btn btn-primary btn-block'>
+                <button type='submit' className='btn btn-primary btn-block' disabled={isLoading}>
                     submit
                 </button>
 
