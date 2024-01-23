@@ -7,7 +7,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons'
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons'
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function Navbar() {
+function NavBar() {
     return (
         // <nav className="navbar navbar-expand-lg navbar-light bg-light">
         //     <div class="container-fluid">
@@ -152,4 +152,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default NavBar;
