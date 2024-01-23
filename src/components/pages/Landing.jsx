@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from '../../assets/image/viscorner_logo.jpg';
 import main from '../../assets/image/main.jpg';
 import styled from 'styled-components';
-import Logo from '../Logo';
+import { Logo } from '../index'
 
 function Landing() {
     return (
