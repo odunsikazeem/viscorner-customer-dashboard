@@ -9,7 +9,6 @@ import { faNetworkWired } from '@fortawesome/free-solid-svg-icons'
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavBar() {
     return (
-
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <FontAwesomeIcon icon={faNetworkWired} /> VisCorner</a>
@@ -18,7 +17,7 @@ function NavBar() {
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> <FontAwesomeIcon icon={faNetworkWired} /> VisCore</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> <FontAwesomeIcon icon={faNetworkWired} /> VisCorner</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
