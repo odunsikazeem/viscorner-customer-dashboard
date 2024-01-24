@@ -2,6 +2,7 @@ import React from 'react';
 import main from '../../assets/image/main.jpg';
 import styled from 'styled-components';
 import { Logo } from '../index'
+import { Link } from 'react-router-dom';
 
 function Landing() {
     return (
@@ -18,7 +19,7 @@ function Landing() {
                         <p>
                             VisCorner is a platform that connects service providers with potential customers around them. Thousands of customers come to our website to tell us what they need and we forward those requests to service providers near them.
                         </p>
-                        <button className='btn btn-primary'>Login/Register</button>
+                        <Link to='/register' className='btn btn-primary'>Login/Register</Link>
                     </div>
                     <img src={main} alt='job junt' className='img main-img' />
                 </div>

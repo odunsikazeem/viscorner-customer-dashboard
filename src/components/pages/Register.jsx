@@ -1,9 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { FormRow } from "../index";
+import { FormRow, Logo } from "../index";
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser, registerUser } from '../../feature/userSlice';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 
 const initialState = {
@@ -19,15 +21,16 @@ function Register() {
 const { user, isLoading } = useSelector (store => store.user);
 const dispatch = useDispatch();
     // redux toolkit and useNavigate later
+const navigate = useNavigate();
 
     useEffect(() => {
         // Check if the user is already logged in using local storage
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-          // Update the Redux store with the user data
-          dispatch(loginUser(JSON.parse(storedUser)));
+        if (user) {
+          setTimeout(() => {
+            navigate('/');
+          },2000)
         }
-      }, [dispatch]);
+      }, [user]);
 
     const handleChange = (e) => {
         const name = e.target.name
@@ -63,7 +66,9 @@ const dispatch = useDispatch();
     };
     
     return (
+        <Wrapper>
         <div className='full-page'>
+            <Logo />
             <form className='form' onSubmit={onSubmit}>
 
                 {/* if values. is member is true display login, if it is false, display register */}
@@ -82,7 +87,7 @@ const dispatch = useDispatch();
                 <FormRow type="password" name="password" value={values.password} handleChange={handleChange} />
 
                 <button type='submit' className='btn btn-primary btn-block' disabled={isLoading}>
-                    submit
+                    {isLoading ? 'loading...' : 'submit'}
                 </button>
 
                 <p> {values.isMember?'Not a member yet?': 'Already a member?'}
@@ -90,7 +95,27 @@ const dispatch = useDispatch();
                 </p>
             </form>
         </div>
+        </Wrapper>
     );
 }
+
+const Wrapper = styled.section`
+div {
+    display: grid;
+align-items: center;
+}
+.logo {
+    height:100px;
+    display: grid;
+justify-content: center;
+}
+.form {
+    max-width: 400px;
+    display: grid;
+justify-content: center;
+    background-color: aliceblue;
+  }
+
+`;
 
 export default Register

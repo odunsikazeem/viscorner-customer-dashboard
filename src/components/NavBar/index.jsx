@@ -5,74 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons'
+import { logoutUser } from '../../feature/userSlice';
+import { useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
+
+
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavBar() {
+    const dispatch = useDispatch();
     return (
-        // <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        //     <div class="container-fluid">
-        //         <Link className="navbar-brand" to="/">
-        //             VisCorner
-        //         </Link>
-        //         <button
-        //             class="navbar-toggler"
-        //             type="button"
-        //             data-bs-toggle="collapse"
-        //             data-bs-target="#navbarNav"
-        //             aria-controls="navbarNav"
-        //             aria-expanded="false"
-        //             aria-label="Toggle navigation"
-        //         >
-        //             <span class="navbar-toggler-icon"></span>
-        //         </button>
-        //         <div className="collapse navbar-collapse" id="navbarNav">
-        //             <ul className="navbar-nav">
-        //                 <li className="nav-item dropdown">
-        //                     <NavLink
-        //                         to="/shipments"
-        //                         end
-        //                         className={({ isActive }) =>
-        //                             isActive ? 'nav-link active dropdown-toggle' : 'nav-link dropdown-toggle'
-        //                         }
-        //                         data-bs-toggle="dropdown"
-        //                     >
-        //                        Shipment
-        //                     </NavLink>
-        //                     <div className="dropdown-menu">
-        //                         {/* Dropdown content goes here */}
-        //                         <a className="dropdown-item" href="#link1">
-        //                         <FontAwesomeIcon icon={faEnvelope} />  Link 1
-        //                         </a>
-        //                         <a className="dropdown-item" href="#link2">
-        //                             Link 2
-        //                         </a>
-        //                     </div>
-        //                 </li>
-        //                 <li className="nav-item">
-        //                     <NavLink
-        //                         to="/users"
-        //                         className={({ isActive }) =>
-        //                             isActive ? 'nav-link active' : 'nav-link'
-        //                         }
-        //                     >
-        //                         Users
-        //                     </NavLink>
-        //                 </li>
-        //                 <li className="nav-item">
-        //                     <NavLink
-        //                         to="/tracking"
-        //                         className={({ isActive }) =>
-        //                             isActive ? 'nav-link active' : 'nav-link'
-        //                         }
-        //                     >
-        //                         Tracking
-        //                     </NavLink>
-        //                 </li>
-        //             </ul>
-        //         </div>
-        //     </div>
-        // </nav>
-
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> <FontAwesomeIcon icon={faNetworkWired} /> VisCorner</a>
@@ -81,11 +23,12 @@ function NavBar() {
                 </button>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> <FontAwesomeIcon icon={faNetworkWired} /> VisCore</h5>
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"> <FontAwesomeIcon icon={faNetworkWired} /> VisCorner</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <Button  variant="info" onClick={() =>dispatch(logoutUser())}>Log Out</Button>
                             <li class="nav-item">
                                 <NavLink
                                     to="/about_us"
