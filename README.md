@@ -17,7 +17,7 @@
   The application was crafted beautifully with the used of React,npm packages ,JavaScript,Bootstrap among others.Viscorner API was used to get the data.
 
   ## Contributors
-  Chak Cheong Chan, Thomas Francis , Akorede Odunsi & Samirah
+  Chak Cheong Chan, Thomas Francis , Akorede Odunsi & Samirah Mahroof
 
   ## Testing
   It can be tested by signing up/logging in.
