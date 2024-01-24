@@ -5,9 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons'
+import { logoutUser } from '../../feature/userSlice';
+import { useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
+
+
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavBar() {
+    const dispatch = useDispatch();
     return (
         <nav class="navbar bg-body-tertiary fixed-top">
             <div class="container-fluid">
@@ -22,6 +28,7 @@ function NavBar() {
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <Button  variant="info" onClick={() =>dispatch(logoutUser())}>Log Out</Button>
                             <li class="nav-item">
                                 <NavLink
                                     to="home"
