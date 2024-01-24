@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Card, ListGroup } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Pagination from '../Pagination';
+import styled from 'styled-components';
 
 const CustomerRequests = () => {
   const [customerRequests, setCustomerRequests] = useState([]);
@@ -31,7 +32,7 @@ const CustomerRequests = () => {
    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <Wrapper>
       <h1>Customer Requests</h1>
       <div className="row">
         {currentRequests.map((customerRequest) => (
@@ -58,8 +59,13 @@ const CustomerRequests = () => {
         currentPage={currentPage}
       />
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
 export default CustomerRequests;
+
+const Wrapper = styled.div`
+margin: 50px
+
+`;
