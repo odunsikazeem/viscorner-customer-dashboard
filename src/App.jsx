@@ -6,22 +6,14 @@ import { Landing, Dashboard, Register, Error, ProtectedRoute } from './component
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import './App.css';
-// import CustomerRequests from './components/Card';
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fas } from '@fortawesome/free-solid-svg-icons'
-// import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 
-
-// library.add(fas, faTwitter, faFontAwesome)
 
 function App() {
   return (
 
     <Router>
       <Routes>
-
         <Route path='/' element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-
         <Route path='landing' element={<Landing />} />
         <Route path='register' element={<Register />} />
         <Route path='*' element={<Error />} />
