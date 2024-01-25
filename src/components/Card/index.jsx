@@ -13,7 +13,7 @@ const CustomerRequests = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://staging.viscorner.com/wp-json/vc/v1/customer-requests?per_page=10&offset=10&orderby=date&order=DESC');
+        const response = await axios.get('https://staging.viscorner.com/wp-json/vc/v1/customer-requests?per_page=10&offset=9');
         setCustomerRequests(response.data);
       } catch (error) {
         console.log(error);
