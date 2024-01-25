@@ -52,13 +52,15 @@ const CustomerRequests = () => {
             </Card>
           </div>
         ))}
+        </div>
+        <Centered>
         <Pagination
         requestsPerPage={requestsPerPage}
         totalRequests={customerRequests.length}
         paginate={paginate}
         currentPage={currentPage}
       />
-      </div>
+      </Centered>
     </Wrapper>
   );
 };
@@ -67,5 +69,9 @@ export default CustomerRequests;
 
 const Wrapper = styled.div`
 margin: 50px
-
 `;
+const Centered = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  `;
