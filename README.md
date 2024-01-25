@@ -26,13 +26,13 @@
   Viscorner API (for data retrieval)
 
   ## Contributors
-  Chak Cheong Chan
-  Thomas Francis
-  Akorede Odunsi
+  Chak Cheong Chan,
+  Thomas Francis,
+  Akorede Odunsi &
   Samirah Mahroof
 
   ## Testing
-  Feel free to test the application by signing up or logging in to the Viscorner website.
+  Feel free to test the application by signing up or logging into the Viscorner website.
 
   ## License
   N/A
