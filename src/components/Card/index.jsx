@@ -13,7 +13,7 @@ const CustomerRequests = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://staging.viscorner.com/wp-json/vc/v1/customer-requests?per_page=10&offset=10&orderby=date&order=DESC');
+        const response = await axios.get('https://staging.viscorner.com/wp-json/vc/v1/customer-requests?per_page=10&offset=9');
         setCustomerRequests(response.data);
       } catch (error) {
         console.log(error);
@@ -52,13 +52,15 @@ const CustomerRequests = () => {
             </Card>
           </div>
         ))}
+        </div>
+        <Centered>
         <Pagination
         requestsPerPage={requestsPerPage}
         totalRequests={customerRequests.length}
         paginate={paginate}
         currentPage={currentPage}
       />
-      </div>
+      </Centered>
     </Wrapper>
   );
 };
@@ -67,5 +69,9 @@ export default CustomerRequests;
 
 const Wrapper = styled.div`
 margin: 50px
-
 `;
+const Centered = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  `;
